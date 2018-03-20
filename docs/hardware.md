@@ -3,175 +3,40 @@ layout: default
 datatable: true
 ---
 
-<script type="text/javascript" src="js/datatable.min.js"></script>
-//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css
-<script>
+## Hardware resources data table
 
+Below you find a summary table with existing hardware resources for learning and teaching robotics for K-12 studends. You can search by column or the entire table. The column search is only applied when you press ENTER.
 
-var datatable = new DataTable(document.querySelector('#first-datatable-output table'), {
-    pageSize: 5,
-    sort: [true, true, false],
-    filters: [true, false, 'select'],
-    filterText: 'Type to filter... ',
-    pagingDivSelector: "#paging-first-datatable"
-});
+This is a community effort, so your help in keeping this information up to date is important. Please check the help page to see how you can contribute.
 
+The following applies to the entire table:
 
-</script>
+{% assign mydata=site.data.data-hardware %}
 
-<table class="table table-bordered">
+<table id="datatable" class="display">
+    <!-- <caption>Software table</caption> -->
     <thead>
         <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th></th>
+        {% for column in mydata[0] %}
+            {% if forloop.index == 2 %}
+                {% continue %}
+            {% else %}
+                <th>{{ column[0] }}</th>
+            {% endif %}
+        {% endfor %}
         </tr>
     </thead>
     <tbody>
+    {% for row in mydata %}
         <tr>
-            <td>Linus</td>
-            <td>Torvalds</td>
-            <td>Computer Science</td>
+        <td><a href="{{ row.Link }}">{{ row.Project }}</a></td>
+        {% for cell in row offset: 2 %}
+            <td>{{ cell[1] }}</td>
+        {% endfor %}
         </tr>
-        <tr>
-            <td>Brian</td>
-            <td>Kernighan</td>
-            <td>Computer Science</td>
-        </tr>
-        <tr>
-            <td>Blaise</td>
-            <td>Pascal</td>
-            <td>Mathematics</td>
-        </tr>
-        <tr>
-            <td>Larry</td>
-            <td>Page</td>
-            <td>Computer Science</td>
-        </tr>
-        <tr>
-            <td>Richard</td>
-            <td>Hamming</td>
-            <td>Mathematics</td>
-        </tr>
-        <tr>
-            <td>Grace</td>
-            <td>Hopper</td>
-            <td>Computer Science</td>
-        </tr>
-        <tr>
-            <td>Pierre</td>
-            <td>Bezier</td>
-            <td>Mathematics</td>
-        </tr>
-        <tr>
-            <td>Shigeru</td>
-            <td>Miyamoto</td>
-            <td>Computer Science</td>
-        </tr>
-        <tr>
-            <td>Leslie</td>
-            <td>Lamport</td>
-            <td>Computer Science</td>
-        </tr>
-        <tr>
-            <td>Rasmus</td>
-            <td>Lerdorf</td>
-            <td>Computer Science</td>
-        </tr>
-        <tr>
-            <td>Xavier</td>
-            <td>Leroy</td>
-            <td>Computer Science</td>
-		</tr>
-        <tr>
-            <td>Albert</td>
-            <td>Einstein</td>
-            <td>Physics</td>
-		</tr>
-        <tr>
-            <td>Bill</td>
-            <td>Gates</td>
-            <td>Computer Science</td>
-		</tr>
-        <tr>
-            <td>Leonard</td>
-            <td>De Vinci</td>
-            <td>Mathematics</td>
-		</tr>
-        <tr>
-            <td>Pierre</td>
-            <td>De Fermat</td>
-            <td>Mathematics</td>
-		</tr>
-        <tr>
-            <td>René</td>
-            <td>Descartes</td>
-            <td>Mathematics</td>
-		</tr>
-        <tr>
-            <td>Alan</td>
-            <td>Turing</td>
-            <td>Computer Science</td>
-		</tr>
-        <tr>
-            <td>Ada</td>
-            <td>Lovelace</td>
-            <td>Computer Science</td>
-		</tr>
-        <tr>
-            <td>Isaac</td>
-            <td>Newton</td>
-            <td>Physics</td>
-		</tr>
-        <tr>
-            <td>Carl Friedrich</td>
-            <td>Gauss</td>
-            <td>Mathematics</td>
-		</tr>
-        <tr>
-            <td>John</td>
-            <td>Von Neumann</td>
-            <td>Computer Science</td>
-		</tr>
-        <tr>
-            <td>Claude</td>
-            <td>Shannon</td>
-            <td>Mathematics</td>
-		</tr>
-        <tr>
-            <td>Tim</td>
-            <td>Berners-Lee</td>
-            <td>Computer Science</td>
-		</tr>
-        <tr>
-            <td>Richard</td>
-            <td>Stallman</td>
-            <td>Computer Science</td>
-		</tr>
-        <tr>
-            <td>Dennis</td>
-            <td>Ritchie</td>
-            <td>Computer Science</td>
-		</tr>
-        <tr>
-            <td>Bjarne</td>
-            <td>Stroustrup</td>
-            <td>Computer Science</td>
-		</tr>
-        <tr>
-            <td>Steve</td>
-            <td>Jobs</td>
-            <td>Computer Science</td>
-		</tr>
-        <tr>
-            <td>Steve</td>
-            <td>Wozniak</td>
-            <td>Computer Science</td>
-		</tr>        <tr>
-            <td>Mario</td>
-            <td>Molina</td>
-            <td>Chemistry</td>
-        </tr>
+    {% endfor %}
     </tbody>
 </table>
-<div id="paging-first-datatable"></div>
+
+
+[back](./)
