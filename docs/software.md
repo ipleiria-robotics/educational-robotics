@@ -3,67 +3,28 @@ layout: default
 datatable: true
 ---
 
+## Software resources data table
 
-## Welcome to another page
+Below you find a summary table with existing software resources for programming and teaching robotics for K-12 studends. You can search by column or the entire table. The column search is only applied when you press ENTER.
 
-_yay_
+This is a community effort, so your help in keeping this information up to date is important. Please check the help page to see how you can contribute.
 
-<table id="sampleTable" class="display">
-   <thead>
-      <tr>
-         <th>Parameter</th>
-         <th>Description</th>
-         <th>Type</th>
-         <th>Default Value</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-         <td>Parameter 1</td>
-         <td>Sample description
-         </td>
-         <td>Sample type</td>
-         <td>Sample default value</td>
-      </tr>
-      <tr>
-         <td>Parameter 2</td>
-         <td>Sample description
-         </td>
-         <td>Sample type</td>
-         <td>Sample default value</td>
-      </tr>
-    <tr>
-       <td>Parameter 3</td>
-       <td>Sample description
-       </td>
-       <td>Sample type</td>
-       <td>Sample default value</td>
-    </tr>
-      <tr>
-         <td>Parameter 4</td>
-         <td>Sample description
-         </td>
-         <td>Sample type</td>
-         <td>Sample default value</td>
-      </tr>
-   </tbody>
-</table>
-
-
-
+The following applies to the entire table:
 
 {% assign mydata=site.data.data-software %}
 
-<table>
-    <caption>Table caption</caption>
+<table id="datatable" class="display">
+    <!-- <caption>Software table</caption> -->
     <thead>
-    {% for column in mydata[0] %}
-	    {% if forloop.index == 2 %}
-            {% continue %}
-	    {% else %}
-            <th>{{ column[0] }}</th>
-        {% endif %}
-    {% endfor %}
+        <tr>
+        {% for column in mydata[0] %}
+            {% if forloop.index == 2 %}
+                {% continue %}
+            {% else %}
+                <th>{{ column[0] }}</th>
+            {% endif %}
+        {% endfor %}
+        </tr>
     </thead>
     <tbody>
     {% for row in mydata %}
@@ -77,18 +38,5 @@ _yay_
     </tbody>
 </table>
 
-
-
-<script>
-$(document).ready(function(){
-
-    $('table.display').DataTable( {
-        paging: true,
-        stateSave: true,
-        searching: true
-    }
-        );
-});
-</script>
 
 [back](./)

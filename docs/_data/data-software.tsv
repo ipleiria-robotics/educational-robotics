@@ -1,4 +1,4 @@
-Project	Link	Ages	Type	Fields	Lang.	Programming	Internet needed?	Requires installation	Supported OS	Hardware platforms	Teachers Train. Material	Classroom Materials	Classroom Management	Simulation	Registration needed?	Debug	Resources	
+Project	Link	Ages	Type	Fields	Language	Programming	Internet needed?	Requires installation	Supported OS	Hardware platforms	Teachers Train. Material	Classroom Materials	Classroom Management	Simulation	Registration needed?	Debug	Resources	
 Arduino Education	https://www.arduino.cc/en/Main/Education	N.A.	A,R	Coding, Math, Science, English Language Arts, Social Studies, Art, …	en	Visual (Ardyblockly, S4A)2, Text (C/C++)	No	Yes (offline version)	Linux, Mac, Windows	Arduino(-based)	Yes2	13 - 172 (€)	Yes	No	Yes	No	http://www.happycode.com.br/	
 Aseba	https://www.thymio.org/en:start	6+	A,R	Coding, Math, Science, English Language Arts, Social Studies, Art, …	en, fr, de, es, it, nl, zh	Visual (VLP, Blockly, Scratch), Text (Aseba)	No	Yes	Linux, Mac, Windows	Thymio	Yes1	1 - 61	No	Yes	No	Yes		
 Blockly	https://developers.google.com/blockly/	4+	A		44+	Visual (Blockly)	Yes	Yes (Android, iOS)	Android, iOS, Web	"Cubelets, Cue
