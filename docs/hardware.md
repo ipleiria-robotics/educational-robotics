@@ -14,7 +14,7 @@ The following applies to the entire table:
 {% assign mydata=site.data.data-hardware %}
 
 <table id="datatable" class="display">
-    <!-- <caption>Software table</caption> -->
+    <!-- <caption>Hardware table</caption> -->
     <thead>
         <tr>
         {% for column in mydata[0] %}
